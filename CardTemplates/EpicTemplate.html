@@ -1,0 +1,60 @@
+<h1 style="font-family: 'Helvetica Neue', Arial, Helvetica;">As a&nbsp;<em>role</em>, I want&nbsp;<em>goal/desire</em>&nbsp;so that&nbsp;<em>benefit</em>.</h1>
+
+<p>&lt;&lt;Description&gt;&gt;</p>
+
+<h2>Acceptance Criteria</h2>
+
+<p>&lt;&lt;Business focused criteria&gt;&gt;</p>
+
+<h2>Technical notes</h2>
+
+<p>&lt;&lt;Technical details/notes&gt;&gt;</p>
+
+<h2>Stats</h2>
+
+<table style="width: 500px; border: solid 2px;">
+	<tbody>
+		<tr>
+			<td>Number of cards in Epic</td>
+			<td><span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%20query:%20SELECT%20Count('Number')%20WHERE%20(Type%20=%20Story%20OR%20type%20=%20Spike)%20AND%20status%20=%20done%20AND%20'Epic'%20=%20THIS%20CARD%0A%7D%7D" style="outline: none;">Macros using <b>THIS CARD</b> will be rendered when card is created using this card default.</span>&nbsp;done of&nbsp;<span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%20query:%20SELECT%20Count('Number')%20WHERE%20(Type%20=%20Story%20OR%20type%20=%20Spike)%20and%20'Epic'%20=%20THIS%20CARD%0A%7D%7D" style="outline: none;">Macros using <b>THIS CARD</b> will be rendered when card is created using this card default.</span></td>
+		</tr>
+		<tr>
+			<td>Estimate of cards In Epic</td>
+			<td><span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%20query:%20SELECT%20SUM('Estimate')%20WHERE%20(Type%20=%20Story%20OR%20type%20=%20Spike)%20and%20'Epic'%20=%20THIS%20CARD%20and%20status%20=%20done%0A%7D%7D" style="outline: none;">Macros using <b>THIS CARD</b> will be rendered when card is created using this card default.</span>&nbsp;done of&nbsp;<span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%20query:%20SELECT%20SUM('Estimate')%20WHERE%20(Type%20=%20Story%20OR%20type%20=%20Spike)%20and%20'Epic'%20=%20THIS%20CARD%0A%7D%7D" style="outline: none;">Macros using <b>THIS CARD</b> will be rendered when card is created using this card default.</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="line-height: 19.6000003814697px; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px;">&nbsp;</p>
+
+<div class="yui-g" style="color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px;">
+<div class="yui-u first" style="width: 1214.25px;">
+<div class="dashboard-half-panel">
+<h2>Points</h2>
+
+<div class="dashboard-content">
+<div>
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09data-series-chart%0A%20%20%20%20conditions:%20(type%20=%20story%20OR%20type%20=%20spike)%0A%20%20%20%20cumulative:%20true%0A%20%20%20%20x-labels-start:%20THIS%20CARD.%22Start%20Date%22%0A%20%20%20%20x-labels-end:%20THIS%20CARD.%22End%20Date%22%0A%20%20%20%20x-labels-step:%201%0A%20%20%20%20chart-width:%201000%0A%20%20%20%20chart-height:%20300%0A%20%20%20%20plot-width:%20800%0A%20%20%20%20plot-height:%20200%0A%20%20%20%20x-title:%20Date%0A%20%20%20%20y-title:%20Points%0A%20%20%20%20series:%0A%20%20%20%20-%20data:%20SELECT%20'moved%20to%20In%20Progress%20on',%20sum(estimate)%20WHERE%20status%20%3E=%20%22In%20Progress%22%20%20AND%20epic=THIS%20CARD%0A%20%20%20%20%20%20label:%20In%20progress%0A%20%20%20%20%20%20color:%20Orange%0A%20%20%20%20%20%20trend:%20true%0A%20%20%20%20%20%20trend-line-width:%202%0A%20%20%20%20-%20data:%20SELECT%20'created%20on',%20sum(estimate)%20WHERE%20epic=THIS%20CARD%0A%20%20%20%20%20%20label:%20Scope%0A%20%20%20%20%20%20color:%20%23000000%0A%20%20%20%20%20%20trend:%20false%0A%20%20%20%20%20%20trend-line-width:%202%0A%20%20%20%20-%20data:%20SELECT%20'moved%20to%20done%20on',%20Sum(estimate)%20WHERE%20status=done%20AND%20epic=THIS%20CARD%0A%20%20%20%20%20%20label:%20Done%0A%20%20%20%20%20%20color:%20%2300FF00%0A%20%20%20%20%20%20trend:%20true%0A%20%20%20%20%20%20trend-line-width:%202%0A%7D%7D" style="outline: none;">Your data series chart will display upon saving</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="yui-u" style="width: 1214.25px;">
+<div class="dashboard-half-panel">
+<h2>Cards</h2>
+
+<div class="dashboard-content">
+<div>
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09data-series-chart%0A%20%20%20%20conditions:%20(type%20=%20story%20OR%20type%20=%20spike)%0A%20%20%20%20cumulative:%20true%0A%20%20%20%20x-labels-start:%20THIS%20CARD.%22Start%20Date%22%0A%20%20%20%20x-labels-end:%20THIS%20CARD.%22End%20Date%22%0A%20%20%20%20x-labels-step:%201%0A%20%20%20%20chart-width:%201000%0A%20%20%20%20chart-height:%20300%0A%20%20%20%20plot-width:%20800%0A%20%20%20%20plot-height:%20200%0A%20%20%20%20x-title:%20Date%0A%20%20%20%20y-title:%20Points%0A%20%20%20%20series:%0A%20%20%20%20-%20data:%20SELECT%20'moved%20to%20In%20Progress%20on',%20count(*)%20WHERE%20status%20%3E=%20%22In%20Progress%22%20%20AND%20epic=THIS%20CARD%0A%20%20%20%20%20%20label:%20In%20progress%0A%20%20%20%20%20%20color:%20Orange%0A%20%20%20%20%20%20trend:%20true%0A%20%20%20%20%20%20trend-line-width:%202%0A%20%20%20%20-%20data:%20SELECT%20'created%20on',%20count(*)%20WHERE%20epic=THIS%20CARD%0A%20%20%20%20%20%20label:%20Scope%0A%20%20%20%20%20%20color:%20%23000000%0A%20%20%20%20%20%20trend:%20false%0A%20%20%20%20%20%20trend-line-width:%202%0A%20%20%20%20-%20data:%20SELECT%20'moved%20to%20done%20on',%20count(*)%20WHERE%20status=done%20AND%20epic=THIS%20CARD%0A%20%20%20%20%20%20label:%20Done%0A%20%20%20%20%20%20color:%20%2300FF00%0A%20%20%20%20%20%20trend:%20true%0A%20%20%20%20%20%20trend-line-width:%202%0A%7D%7D" style="outline: none;">Your data series chart will display upon saving</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p style="line-height: 19.6000003814697px; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px;">&nbsp;</p>
+
+<p style="line-height: 19.6000003814697px; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px;"><span style="color: rgb(17, 17, 17); font-size: 18px; font-weight: 700; line-height: normal;">Cards contributing to this epic</span></p>
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09table%20query:%20SELECT%20number,%20name,%20'status',%20'estimate',%20'Moved%20to%20in%20progress%20on',%20'end%20date',%20'actual%20days'%20WHERE%20('type'%20=%20'story'%20OR%20'type'%20=%20'spike')%20and%20'Epic'%20=%20THIS%20CARD%20ORDER%20BY%20status,%20'End%20Date'%20Desc%0A%7D%7D" style="outline: none;">Your table will display upon saving</div>
