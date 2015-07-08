@@ -1,0 +1,51 @@
+<h1>Iterations</h1>
+
+<p>We are in iteration&nbsp;<a class="macro" href="/projects/ingenie_dna/cards/636" raw_text="%7B%7B%0A%20%20project-variable%0A%20%20%20%20name:%20current%20iteration%0A%7D%7D" style="outline: none;">#636 Iteration 128</a></p>
+
+<h2>Velocity</h2>
+
+<div>
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09average%0A%20%20%20%20query:%20SELECT%20'points%20done'%20WHERE%20type%20=%20iteration%20AND%20'end%20date'%20%3C%20TODAY%20AND%20VelocityCalculationDate%20%3E%20TODAY%0A%7D%7D" style="outline: none;">Your average will display upon saving</div>
+- Current Velocity based on a rolling 4 week average (
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09average%0A%20%20%20%20query:%20SELECT%20%22Number%20of%20Stories%20in%20Iteration%22%20WHERE%20type%20=%20iteration%20AND%20'end%20date'%20%3C%20TODAY%20AND%20VelocityCalculationDate%20%3E%20TODAY%0A%7D%7D" style="outline: none;">Your average will display upon saving</div>
+&nbsp;stories per week,
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09average%0A%20%20%20%20query:%20SELECT%20%22Number%20of%20Spikes%20in%20Iteration%22%20WHERE%20type%20=%20iteration%20AND%20'end%20date'%20%3C%20TODAY%20AND%20VelocityCalculationDate%20%3E%20TODAY%0A%7D%7D" style="outline: none;">Your average will display upon saving</div>
+&nbsp;spikes)</div>
+
+<p>&nbsp;</p>
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09data-series-chart%0A%20%20%20%20chart-width:%201550%0A%20%20%20%20plot-width:%201350%0A%20%20%20%20chart-height:%20170%0A%20%20%20%20plot-height:%2080%0A%20%20%20%20plot-x-offset:%2040%0A%20%20%20%20plot-y-offset:%2020%0A%20%20%20%20y-title:%20Points%0A%20%20%20%20label-font-angle:%2045%0A%20%20%20%20data-point-symbol:%20diamond%0A%20%20%20%20data-labels:%20true%0A%20%20%20%20x-labels-end:%20(Current%20Iteration)%0A%20%20%20%20x-labels-conditions:%20'Start%20Date'%20%3E%20'01%20Mar%202015'%0A%20%20%20%20cumulative:%20false%0A%20%20%20%20series:%0A%20%20%20%20-%20label:%20Velocity%0A%20%20%20%20%20%20color:%20blue%0A%20%20%20%20%20%20line-width:%200%0A%20%20%20%20%20%20type:%20line%0A%20%20%20%20%20%20data:%20SELECT%20iteration,%20Sum('Estimate')%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20status=%20done%0A%20%20%20%20%20%20trend:%20true%0A%20%20%20%20%20%20trend-ignore:%20zeroes-at-end%0A%20%20%20%20%20%20trend-line-width:%201%0A%20%20%20%20%20%20trend-line-color:%20blue%0A%7D%7D" style="outline: none;">Your data series chart will display upon saving</div>
+
+<p>&nbsp;</p>
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09data-series-chart%0A%20%20%20%20chart-width:%201550%0A%20%20%20%20plot-width:%201350%0A%20%20%20%20chart-height:%20170%0A%20%20%20%20plot-height:%2080%0A%20%20%20%20plot-x-offset:%2040%0A%20%20%20%20plot-y-offset:%2020%0A%20%20%20%20x-labels-end:%20(Current%20Iteration)%0A%20%20%20%20x-labels-conditions:%20'Start%20Date'%20%3E%20'01%20Mar%202015'%0A%20%20%20%20y-title:%20Cards%20done%0A%20%20%20%20label-font-angle:%2045%0A%20%20%20%20data-point-symbol:%20diamond%0A%20%20%20%20data-labels:%20true%0A%20%20%20%20cumulative:%20false%0A%20%20%20%20series:%0A%20%20%20%20-%20label:%20Velocity%0A%20%20%20%20%20%20color:%20blue%0A%20%20%20%20%20%20line-width:%200%0A%20%20%20%20%20%20type:%20line%0A%20%20%20%20%20%20data:%20SELECT%20iteration,%20count(*)%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20status%20=%20done%0A%20%20%20%20%20%20trend:%20true%0A%20%20%20%20%20%20trend-ignore:%20zeroes-at-end%0A%20%20%20%20%20%20trend-line-width:%201%0A%20%20%20%20%20%20trend-line-color:%20blue%0A%7D%7D" style="outline: none;">Your data series chart will display upon saving</div>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2>Scope</h2>
+
+<div><span style="color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px; line-height: 19.6000003814697px;"><span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%0A%20%20%20%20query:%20SELECT%20SUM('Estimate')%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20iteration%20%3E=%20(Current%20Iteration)%20AND%20status%20%3C%20done%20AND%20status%20IS%20NOT%20rejected%0A%7D%7D" style="outline: none;">7</span>&nbsp; –&nbsp;Unfinished points worth of work assigned to this or future iterations (<span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%0A%20%20%20%20query:%20SELECT%20COUNT(*)%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20iteration%20%3E=%20(Current%20Iteration)%20AND%20status%20%3C%20done%20AND%20status%20IS%20NOT%20rejected%0A%7D%7D" style="outline: none;">12</span></span><span style="color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px; line-height: 19.6000003814697px;">&nbsp;cards)</span></div>
+
+<div><span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%0A%20%20%20%20query:%20SELECT%20SUM('Estimate')%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20iteration%20IS%20NOT%20'not%20set'%20AND%20status%20%3C%20done%20AND%20status%20IS%20NOT%20rejected%0A%7D%7D" style="outline: none;">35</span>&nbsp; –&nbsp;<span style="color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px; line-height: 19.6000003814697px;">Unfinished points worth of work assigned to any iteration (<span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%0A%20%20%20%20query:%20SELECT%20COUNT(*)%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20iteration%20IS%20NOT%20'not%20set'%20AND%20status%20%3C%20done%20AND%20status%20IS%20NOT%20rejected%0A%7D%7D" style="outline: none;">32</span></span><span style="color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Arial, Helvetica; font-size: 14px; line-height: 19.6000003814697px;">&nbsp;cards)</span></div>
+
+<div><span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%0A%20%20%20%20query:%20SELECT%20SUM('Estimate')%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20status%20IS%20NOT%20done%20AND%20Status%20IS%20NOT%20rejected%0A%7D%7D" style="outline: none;">112</span>&nbsp;–&nbsp;Unfinished points worth of work within Mingle (<span class="macro" contenteditable="false" raw_text="%7B%7B%0A%09value%0A%20%20%20%20query:%20SELECT%20COUNT(*)%20WHERE%20(type%20=%20story%20OR%20type%20=%20spike)%20AND%20status%20IS%20NOT%20done%20AND%20Status%20IS%20NOT%20rejected%0A%7D%7D" style="outline: none;">67</span>&nbsp;cards)</div>
+
+<h1>Epics</h1>
+
+<h2>Approved / In Progress</h2>
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09table%0A%20%20%20%20query:%20SELECT%20number,%20name,%20status,%20'start%20date',%20'Story%20Count',%20'Total%20Estimate',%20'Remaining%20Estimate',%20'Actual%20days%20for%20all%20done%20cards'%20WHERE%20type%20=%20epic%20AND%20number%20%3E%20300%20AND%20status%20%3E%20Rejected%20AND%20status%20%3C%20Done%20ORDER%20BY%20status%20asc,%20'end%20date'%20desc,%20'start%20date'%20desc%0A%7D%7D" style="outline: none;">Your table will display upon saving</div>
+
+<h2>Pending</h2>
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09table%0A%20%20%20%20query:%20SELECT%20number,%20name,%20Created,%20'Story%20Count',%20'Total%20Estimate',%20'Remaining%20Estimate'%20WHERE%20type%20=%20epic%20AND%20number%20%3E%20300%20AND%20(status%20=%20new%20OR%20status%20=%20null)%20ORDER%20BY%20created%20Desc%0A%7D%7D" style="outline: none;">Your table will display upon saving</div>
+
+<h2>Done</h2>
+
+<div class="macro-placeholder macro" raw_text="%7B%7B%0A%09table%0A%20%20%20%20query:%20SELECT%20number,%20name,%20'start%20date',%20'end%20date',%20'Story%20Count',%20'Total%20Estimate',%20'Remaining%20Estimate',%20'Actual%20days%20for%20all%20done%20cards'%20WHERE%20type%20=%20epic%20AND%20number%20%3E%20300%20AND%20status%20=%20Done%20ORDER%20BY%20status%20asc,%20'end%20date'%20desc,%20'start%20date'%20desc%0A%7D%7D" style="outline: none;">Your table will display upon saving</div>
